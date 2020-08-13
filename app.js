@@ -7,7 +7,7 @@ var exphbs = require('express-handlebars');
 
 var indexRouter = require('./routes/index');
 
-
+ 
 var app = express();
 
 // view engine setup
@@ -15,7 +15,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine("hbs", exphbs({
   extname: "hbs",
   partialsDir: __dirname + '/views/partials/',
-  
+  helpers: (require('../handlebars-helpers.js')),
+   
 }));
 app.set("view engine", "hbs");
 

@@ -7,7 +7,7 @@ var mysql = require('mysql');
     password: 'Lbxl21$1',
     database:'k121749_weinschrank'
 });
-
+ 
 connection.connect(function(err){
     if(err) throw err;
     console.log('connected');

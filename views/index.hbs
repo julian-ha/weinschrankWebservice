@@ -1,3 +1,12 @@
+{{#checkBool data.[0].bottle1 }}
+{{/checkBool}}
+{{#checkBool data.[0].bottle2 }}
+{{/checkBool}}
+{{#checkBool data.[0].bottle3 }}
+{{/checkBool}}
+{{#checkBool data.[0].door_open }}
+{{/checkBool}}
+
 <section class="section">
     <div class="container">
         <div class="columns">
@@ -16,20 +25,32 @@
             <div class="column">
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Fach 1</p>
-                    <p class="dashboard-item-kennzahl">{{ data.[0].bottle1 }}</p>
+                    {{#if data.[0].bottle1}}
+                    <p class="dashboard-item-kennzahl"><i class="lni lni-emoji-smile"></i></p>
+                    {{else }}
+                    <p class="dashboard-item-kennzahl"><i class="lni lni-emoji-sad"></i></p>
+                    {{/if }}
                 </div>
             </div>
             <div class="column">
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Fach 2</p>
-                    <p class="dashboard-item-kennzahl">{{ data.[0].bottle2 }}</p>
+                    {{#if data.[0].bottle2}}
+                    <p class="dashboard-item-kennzahl"><i class="lni lni-emoji-smile"></i></p>
+                    {{else }}
+                    <p class="dashboard-item-kennzahl"><i class="lni lni-emoji-sad"></i></p>
+                    {{/if }}
 
                 </div>
             </div>
             <div class="column">
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Fach3</p>
-                    <p class="dashboard-item-kennzahl">{{data.[0].bottle3 }}</p>
+                    {{#if data.[0].bottle3}}
+                    <p class="dashboard-item-kennzahl"><i class="lni lni-emoji-smile"></i></p>
+                    {{else }}
+                    <p class="dashboard-item-kennzahl"><i class="lni lni-emoji-sad"></i></p>
+                    {{/if }}
                 </div>
             </div>
 
@@ -43,20 +64,24 @@
             <div class="column">
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Temperatur</p>
-                    <p class="dashboard-item-kennzahl">{{ data.[0].temperature }}</p>
+                    <p class="dashboard-item-kennzahl">{{ data.[0].temperature }} &#8451;</p>
                 </div>
             </div>
             <div class="column">
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Luftfeuchtigkeit</p>
-                    <p class="dashboard-item-kennzahl">{{ data.[0].humidity }}</p>
+                    <p class="dashboard-item-kennzahl">{{ data.[0].humidity }} %</p>
 
                 </div>
             </div>
             <div class="column">
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Ob die Tür offen ist</p>
-                    <p class="dashboard-item-kennzahl">{{ data.[0].door_open }}</p>
+                {{#if data.[0].door_open}}
+                     <p class="dashboard-item-kennzahl"><i class="lni lni-unlock"></i></p>
+                {{else }}
+                   <p class="dashboard-item-kennzahl"><i class="lni lni-lock"></i></p>
+                {{/if }}
                 </div>
             </div>
         </div>
