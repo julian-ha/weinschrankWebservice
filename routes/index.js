@@ -1,4 +1,5 @@
 var express = require('express');
+const cors = require('cors');
 var router = express.Router();
 
 const databaseApi = require('../database');
@@ -20,7 +21,7 @@ router.get('/', async (req, res, next) =>  {
 });
 
 
-router.put('/doorlock/:value', async (req, res, next) => {
+router.put('/doorlock/:value',cors(), async (req, res, next) => {
   console.log(`A request on that api occured with data ${req.params.value}`);
   
   //store the data in the database
@@ -31,7 +32,7 @@ router.put('/doorlock/:value', async (req, res, next) => {
   res.sendStatus(200)
 });
 
-router.put('/reading/:temperature/:humidity', async (req, res, next) => {
+router.put('/reading/:temperature/:humidity', cors(), async (req, res, next) => {
   console.log(`A request on that api occured with data ${req.params.temperature} and ${req.params.humidity}`);
   
   //store the data in the database
@@ -43,7 +44,7 @@ router.put('/reading/:temperature/:humidity', async (req, res, next) => {
 
 });
 
-router.put('/bottle/:place/:value', async (req, res, next) => {
+router.put('/bottle/:place/:value', cors(), async (req, res, next) => {
   console.log(`A request on that api occured with data ${req.params.place} and ${req.params.value}`);
   
   if (!places.includes(req.params.place)) return res.sendStatus(406)
