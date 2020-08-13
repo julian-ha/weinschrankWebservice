@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine("hbs", exphbs({
   extname: "hbs",
   partialsDir: __dirname + '/views/partials/',
-  helpers: (require('../handlebars-helpers.js')),
+  helpers: (require('./handlebars-helpers.js')),
    
 }));
 app.set("view engine", "hbs");
