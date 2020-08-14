@@ -26,9 +26,9 @@
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Fach 1</p>
                     {{#if data.[0].bottle1}}
-                    <p class="dashboard-item-kennzahl"><i class="lni lni-emoji-smile"></i></p>
+                    <p class="dashboard-item-kennzahl has-text-success"><i class="lni lni-emoji-smile"></i></p>
                     {{else }}
-                    <p class="dashboard-item-kennzahl"><i class="lni lni-emoji-sad"></i></p>
+                    <p class="dashboard-item-kennzahl has-text-danger"><i class="lni lni-emoji-sad"></i></p>
                     {{/if }}
                 </div>
             </div>
@@ -36,9 +36,9 @@
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Fach 2</p>
                     {{#if data.[0].bottle2}}
-                    <p class="dashboard-item-kennzahl"><i class="lni lni-emoji-smile"></i></p>
+                    <p class="dashboard-item-kennzahl has-text-success"><i class="lni lni-emoji-smile"></i></p>
                     {{else }}
-                    <p class="dashboard-item-kennzahl"><i class="lni lni-emoji-sad"></i></p>
+                    <p class="dashboard-item-kennzahl has-text-danger"><i class="lni lni-emoji-sad"></i></p>
                     {{/if }}
 
                 </div>
@@ -47,9 +47,9 @@
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Fach3</p>
                     {{#if data.[0].bottle3}}
-                    <p class="dashboard-item-kennzahl"><i class="lni lni-emoji-smile"></i></p>
+                    <p class="dashboard-item-kennzahl has-text-success"><i class="lni lni-emoji-smile"></i></p>
                     {{else }}
-                    <p class="dashboard-item-kennzahl"><i class="lni lni-emoji-sad"></i></p>
+                    <p class="dashboard-item-kennzahl has-text-danger"><i class="lni lni-emoji-sad"></i></p>
                     {{/if }}
                 </div>
             </div>
@@ -77,7 +77,7 @@
             <div class="column is-4">
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Luftdruck</p>
-                    <p class="dashboard-item-kennzahl">{{ data.[0].pressure }} Bar</p>
+                    <p class="dashboard-item-kennzahl">{{ data.[0].pressure }} hPa</p>
                 </div>
             </div>
         </div>
