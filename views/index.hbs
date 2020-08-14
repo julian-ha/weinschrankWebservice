@@ -61,20 +61,30 @@
         <h2 class="title is-5">Zusätzliche Daten</h2>
 
         <div class="columns has-text-centered">
-            <div class="column">
+            <div class="column is-4">
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Temperatur</p>
                     <p class="dashboard-item-kennzahl">{{ data.[0].temperature }} &#8451;</p>
                 </div>
             </div>
-            <div class="column">
+            <div class="column is-4">
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Luftfeuchtigkeit</p>
                     <p class="dashboard-item-kennzahl">{{ data.[0].humidity }} %</p>
 
                 </div>
             </div>
-            <div class="column">
+            <div class="column is-4">
+                <div class="dashboard-item">
+                    <p class="dashboard-item-head">Luftdruck</p>
+                    <p class="dashboard-item-kennzahl">{{ data.[0].pressure }} Bar</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="columns has-text-centered">
+            <div class="column is-4">
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Türschloss</p>
                 {{#if data.[0].door_open}}
@@ -84,16 +94,7 @@
                 {{/if }}
                 </div>
             </div>
-        </div>
 
-
-        <div class="columns has-text-centered">
-            <div class="column is-4">
-                <div class="dashboard-item">
-                    <p class="dashboard-item-head">Luftdruck</p>
-                    <p class="dashboard-item-kennzahl">{{ data.[0].pressure }} Bar</p>
-                </div>
-            </div>
             <div class="column is-4">
                 <div class="dashboard-item">
                     <p class="dashboard-item-head">Lüftergeschwindigkeit</p>
