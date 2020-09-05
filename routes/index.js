@@ -20,17 +20,6 @@ router.get('/', async (req, res, next) =>  {
   });
 });
 
-router.put('/vent/:rpm', cors(), async (req, res, next) => {
-  console.log(`A request on that api occured with data ${req.params.rpm}`);
-
-  //store data in database
-  const sqlUpdateVent = 'UPDATE weinschrank SET vent_rpm = ? WHERE id = 1';
-  var variablesUpdateVent = [req.params.rpm];
-  await databaseApi.queryDB(sqlUpdateVent, variablesUpdateVent);
-
-  res.sendStatus(200)
-});
-
 
 router.put('/doorlock/:value',cors(), async (req, res, next) => {
   console.log(`A request on that api occured with data ${req.params.value}`);
@@ -43,12 +32,12 @@ router.put('/doorlock/:value',cors(), async (req, res, next) => {
   res.sendStatus(200)
 });
 
-router.put('/reading/:temperature/:humidity/:pressure', cors(), async (req, res, next) => {
+router.put('/reading/:temperature/:humidity/:pressure/:rpm', cors(), async (req, res, next) => {
   console.log(`A request on that api occured with data ${req.params.temperature} and ${req.params.humidity}`);
   
   //store the data in the database
-  const sqlUpdateReadings = 'UPDATE weinschrank SET temperature = ?, humidity = ?, pressure = ? WHERE id = 1';
-  var variablesUpdateReadings = [req.params.temperature, req.params.humidity, req.params.pressure];
+  const sqlUpdateReadings = 'UPDATE weinschrank SET temperature = ?, humidity = ?, pressure = ?, vent_rpm = ? WHERE id = 1';
+  var variablesUpdateReadings = [req.params.temperature, req.params.humidity, req.params.pressure, req.params.rpm];
   await databaseApi.queryDB(sqlUpdateReadings, variablesUpdateReadings);
 
   res.sendStatus(200)
